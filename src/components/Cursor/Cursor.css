@@ -1,0 +1,43 @@
+.dot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  background-image: url("../../images/lightsabergreen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: translate(-9%, -20%);
+
+  z-index: 999;
+  pointer-events: none;
+  rotate: -40deg;
+}
+
+.ring.hovered {
+  width: 50px;
+  height: 50px;
+  border-width: 3px;
+  border-color: lightgray;
+}
+
+.dot.hovered {
+  background-image: url("../../images/lightsaberpurple.png");
+}
+
+.dot.clicked {
+  animation: clickAnimation 0.4s ease;
+}
+
+@keyframes clickAnimation {
+  0% {
+    transform: translate(-50%, -50%);
+    /* Initial cursor style */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    background-image: url("../../images/lightsaberred.png");
+    rotate: -120deg;
+    /* End cursor style after the animation */
+  }
+}
